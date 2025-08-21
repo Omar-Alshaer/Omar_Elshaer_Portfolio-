@@ -1,0 +1,540 @@
+/* ========================================
+   FOOTER STYLES WITH WAVE EFFECT
+   ======================================== */
+
+#footer {
+    background: linear-gradient(135deg, var(--dark), var(--dark-light));
+    color: var(--light);
+    position: relative;
+    overflow: hidden;
+    padding-top: 0;
+}
+
+.dark-mode #footer {
+    background: linear-gradient(135deg, var(--light), var(--gray-light));
+    color: var(--dark);
+}
+
+/* Wave Effect */
+.waves {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url(../assets/images/wave.png);
+    background-size: 1000px 80px;
+    background-repeat: repeat-x;
+    animation: waveMove 6s linear infinite;
+    transform: translateY(0px);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    background: url(../assets/images/wave.png);
+    background-size: 1000px 80px;
+    background-repeat: repeat-x;
+    animation: waveMove 6s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.8;
+    background: url(../assets/images/wave.png);
+    background-size: 1000px 80px;
+    background-repeat: repeat-x;
+    animation: waveMove 8s linear infinite;
+}
+
+.wave#wave3 {
+    z-index: 998;
+    opacity: 0.6;
+    background: url(../assets/images/wave.png);
+    background-size: 1000px 80px;
+    background-repeat: repeat-x;
+    animation: waveMove 10s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 997;
+    opacity: 0.4;
+    background: url(../assets/images/wave.png);
+    background-size: 1000px 80px;
+    background-repeat: repeat-x;
+    animation: waveMove 12s linear infinite;
+}
+
+/* Wave Animation */
+@keyframes waveMove {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+/* Dark Mode Wave Adjustments */
+.dark-mode .wave {
+    filter: brightness(0.8);
+}
+
+/* Footer Content */
+.footer-content {
+    padding: 80px 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+/* Footer Brand */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.footer-logo .logo-icon {
+    font-size: 2.5rem;
+    animation: bounce 2s infinite;
+}
+
+.footer-logo .logo-text span {
+    color: var(--secondary);
+}
+
+.footer-brand p {
+    font-size: 1.1rem;
+    color: var(--gray-light);
+    line-height: 1.8;
+    max-width: 400px;
+}
+
+.dark-mode .footer-brand p {
+    color: var(--gray);
+}
+
+/* Footer Links */
+.footer-links h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--light);
+    position: relative;
+}
+
+.dark-mode .footer-links h4 {
+    color: var(--dark);
+}
+
+.footer-links h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 1px;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: var(--gray-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dark-mode .footer-links a {
+    color: var(--gray);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+.footer-links a::before {
+    content: '→';
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+}
+
+/* Footer Tech */
+.footer-tech h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--light);
+    position: relative;
+}
+
+.dark-mode .footer-tech h4 {
+    color: var(--dark);
+}
+
+.footer-tech h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 1px;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tech-icons i {
+    font-size: 1.8rem;
+    color: var(--gray-light);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.dark-mode .tech-icons i {
+    color: var(--gray);
+}
+
+.tech-icons i:hover {
+    color: var(--primary);
+    transform: translateY(-3px) scale(1.1);
+    filter: drop-shadow(0 5px 15px rgba(99, 102, 241, 0.3));
+}
+
+/* Tech Icon Colors */
+.tech-icons .fa-html5:hover { color: #e34f26; }
+.tech-icons .fa-css3-alt:hover { color: #1572b6; }
+.tech-icons .fa-js:hover { color: #f7df1e; }
+.tech-icons .fa-react:hover { color: #61dafb; }
+.tech-icons .fa-node:hover { color: #339933; }
+.tech-icons .fa-python:hover { color: #3776ab; }
+.tech-icons .fa-git-alt:hover { color: #f05032; }
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dark-mode .footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-bottom p {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+}
+
+.dark-mode .footer-bottom p {
+    color: var(--gray);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-light);
+    font-size: 1.1rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.dark-mode .footer-social .social-link {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--gray);
+}
+
+.footer-social .social-link:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .footer-brand p {
+        margin: 0 auto;
+    }
+
+    .footer-links h4::after,
+    .footer-tech h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links ul {
+        align-items: center;
+    }
+
+    .tech-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-links h4::after,
+    .footer-tech h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links ul {
+        align-items: center;
+    }
+
+    .tech-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .waves {
+        top: -60px;
+        height: 60px;
+    }
+
+    .wave {
+        height: 60px;
+        background-size: 800px 60px;
+    }
+
+    .wave#wave1,
+    .wave#wave2,
+    .wave#wave3,
+    .wave#wave4 {
+        background-size: 800px 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 60px 0 30px;
+    }
+
+    .footer-main {
+        gap: 30px;
+    }
+
+    .footer-brand {
+        gap: 15px;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+
+    .footer-logo .logo-icon {
+        font-size: 2rem;
+    }
+
+    .footer-brand p {
+        font-size: 1rem;
+    }
+
+    .footer-links h4,
+    .footer-tech h4 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .tech-icons i {
+        font-size: 1.5rem;
+    }
+
+    .waves {
+        top: -50px;
+        height: 50px;
+    }
+
+    .wave {
+        height: 50px;
+        background-size: 600px 50px;
+    }
+
+    .wave#wave1,
+    .wave#wave2,
+    .wave#wave3,
+    .wave#wave4 {
+        background-size: 600px 50px;
+    }
+}
+
+/* Wave Fallback (CSS-only) */
+@keyframes waveMove {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+/* Enhanced Wave Effects */
+.wave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: inherit;
+    background-repeat: inherit;
+    animation: inherit;
+    animation-direction: reverse;
+    opacity: 0.3;
+}
+
+/* Wave Glow Effect */
+.wave#wave1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+    animation: waveGlow 4s ease-in-out infinite;
+}
+
+@keyframes waveGlow {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Footer Animation on Scroll */
+#footer.animate {
+    animation: footerSlideUp 1s ease-out;
+}
+
+@keyframes footerSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Links Hover Animation */
+.footer-links a {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 1px;
+    background: var(--gradient-primary);
+    transition: left 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    left: 0;
+}
+
+/* Tech Icons Stagger Animation */
+.tech-icons i {
+    animation: techIconFloat 3s ease-in-out infinite;
+}
+
+.tech-icons i:nth-child(1) { animation-delay: 0s; }
+.tech-icons i:nth-child(2) { animation-delay: 0.2s; }
+.tech-icons i:nth-child(3) { animation-delay: 0.4s; }
+.tech-icons i:nth-child(4) { animation-delay: 0.6s; }
+.tech-icons i:nth-child(5) { animation-delay: 0.8s; }
+.tech-icons i:nth-child(6) { animation-delay: 1s; }
+.tech-icons i:nth-child(7) { animation-delay: 1.2s; }
+
+@keyframes techIconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
